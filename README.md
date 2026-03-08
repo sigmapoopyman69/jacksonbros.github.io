@@ -35,29 +35,35 @@
         display: none !important;
     }
 </style>
-<html>
-    <head>
-        <!--HTML file auto generated using EmulatorJS codehelper-->
-        <style>
-            body, html {
-                margin: 0;
-                padding: 0;
+
+<div id="game-container">
+    <div id="game"></div>
+    <button id="fs-button" onclick="toggleFullScreen()">Play Fullscreen</button>
+</div>
+
+<script>
+    EJS_player = "#game";
+    EJS_core = "nes";
+    EJS_gameName = "Michael Jackson Bros.";
+    EJS_color = "#0064ff";
+    EJS_startOnLoaded = true;
+    EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
+    EJS_gameUrl = "Super Mario Bros. (World).nes";
+
+    function toggleFullScreen() {
+        const elem = document.getElementById("game-container");
+        if (!document.fullscreenElement) {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
             }
-        </style>
-    </head>
-    <body>
-        <div style="width:100%;height:100%;max-width:100%">
-            <div id="game"></div>
-        </div>
-        <script>
-            EJS_player = "#game";
-            EJS_core = "nes";
-            EJS_gameName = "Michael Jackson Bros.";
-            EJS_color = "#0064ff";
-            EJS_startOnLoaded = true;
-            EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
-            EJS_gameUrl = "Super Mario Bros. (World).nes";
-        </script>
-        <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
-    </body>
-</html>
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
+    }
+</script>
+<script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+
