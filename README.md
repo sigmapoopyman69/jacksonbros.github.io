@@ -34,7 +34,6 @@
     #game-container:-webkit-full-screen #fs-button { /* Safari support */
         display: none !important;
     }
-</style>
 <div id="game-container">
     <div id="game"></div>
     <button id="fs-button" onclick="toggleFullScreen()">Play Fullscreen</button>
