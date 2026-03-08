@@ -35,7 +35,6 @@
         display: none !important;
     }
 </style>
-
 <html>
     <head>
         <!--HTML file auto generated using EmulatorJS codehelper-->
